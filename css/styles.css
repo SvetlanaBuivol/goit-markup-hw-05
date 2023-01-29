@@ -9,6 +9,7 @@
     --customer-bg-cl: #8E8F99;
     --footer-10-link-bg: rgba(255, 255, 255, 0.1);
     --green-cl: #31D0AA;
+    --modal-bg: #FCFCFC;
      
 
 }
@@ -92,6 +93,22 @@ ul {
 
 .site-nav .item + .item {
     margin-left: 40px;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.current::after {
+    position: absolute;
+    display: inline-block;
+    content: "";
+    width: 100%;
+    height: 4px;
+    left: 0;
+    bottom: 0;
+    background-color: var(--hover-focus-color);
+    border-radius: 2px;
 }
 
 /* contacts */
@@ -567,4 +584,88 @@ ul {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
  }
 
- 
+ .portfolio-thumb {
+    position: relative;
+ }
+
+ .portfolio-txt {
+    position: absolute;
+    display: inline-block;
+    width: 296px;
+    top: 40px;
+    left: 32px;
+
+    opacity: 0;
+ }
+
+ .portfolio-thumb::before {
+    position: absolute;
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+    background-color: var(--hover-focus-color);
+ }
+
+ .portfolio-card:hover .portfolio-txt,
+ .portfolio-card:focus .portfolio-txt {
+    opacity: 1;
+ }
+
+ .portfolio-card:hover .portfolio-thumb::before,
+ .portfolio-card:focus .portfolio-thumb::before {
+    opacity: 1;
+ }
+
+
+ .portfolio-txt p {
+    color: var(--footer-logo-color);
+ }
+
+
+
+ /* ========== M O D A L ========== */
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 47, 66, 0.4);
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding-top: 24px;
+    padding-right: 24px;
+
+    min-width: 408px;
+    min-height: 576px;
+    background-color: var(--modal-bg);
+}
+
+.close-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+
+    margin-left: auto;
+
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: var(--footer-text);
+    cursor: pointer;
+}
+
+.icon-close {
+    width: 8px;
+    height: 8px;
+}
