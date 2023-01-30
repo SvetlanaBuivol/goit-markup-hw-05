@@ -715,3 +715,7 @@ ul {
     height: 8px;
 }
 
+textarea {
+    resize: none;
+}
+
